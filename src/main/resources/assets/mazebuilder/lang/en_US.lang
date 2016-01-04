@@ -1,0 +1,22 @@
+# Creative tabs
+itemGroup.mazebuilder=CoderDojo Maze Builder
+
+
+# Blocks
+tile.mazebuilder:MazeCenterBlock.name=Maze start
+tile.mazebuilder:MazeFloorBlock.name=Maze floor
+tile.mazebuilder:MazeEndBlock.name=Maze finish
+tile.mazebuilder:MazeWallBlock.name=Maze wall
+
+
+# Items
+item.mazebuilder:ItemMazeBuilderIcon.name= Icon Place Holder
+item.mazebuilder:VerySmallMaze.name= 3x3 maze
+item.mazebuilder:StillASmallMaze.name= 7x6 maze
+item.mazebuilder:SmallMaze.name= 15x15 maze
+item.mazebuilder:CleanMazes.name= Clean maze
+
+#Container
+
+
+#Other

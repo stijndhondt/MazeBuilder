@@ -1,0 +1,11 @@
+/*
+!/src
+!build.gradle
+!build.properties
+!gradle/
+!gradlew
+!gradlew.bat
+!LICENSE
+!README.md
+!.gitignore
+*.class

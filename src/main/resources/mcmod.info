@@ -1,0 +1,21 @@
+[
+  {
+    "modid": "mazebuilder",
+    "name": "Maze Builder",
+    "description": "Mazes ahoi build for Coder Dojo Belgium - Eeklo",
+    "version": "${mod_version}",
+    "mcversion": "${minecraft_version}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "SD"
+    ],
+    "credits": "SD",
+    "logoFile": "assets/mazebuilder/textures/items/ItemMazeBuilderIcon.png",
+    "screenshots": [
+    ],
+    "parent":"",
+    "dependencies": [
+    ]
+  }
+]
