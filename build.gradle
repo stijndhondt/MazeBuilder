@@ -1,3 +1,5 @@
+import java.util.regex.Pattern
+
 buildscript {
     repositories {
         mavenCentral()
@@ -25,6 +27,7 @@ ext.configFile = file "build.properties"
 configFile.withReader {
     def prop = new Properties()
     prop.load(it)
+
     project.ext.config = new ConfigSlurper().parse prop
 }
 
@@ -36,7 +39,7 @@ minecraft {
     runDir = "run"
 
     replaceIn "reference/Reference.java"
-    replace "@VERSION@" , "${config.mod_version}.${System.getenv("BUILD_NUMBER") ?: 0}"
+    replace "@VERSION@" , "${config.mod_version}.${config.build_number}"
 }
 
 
@@ -64,7 +67,10 @@ processResources
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
-prop.
+
+    config.build_number= config.build_number+1
+
+
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
@@ -82,3 +88,14 @@ prop.
 sourceSets {
     main { output.resourcesDir = output.classesDir }
 }
+
+
+task incrementVersionCode << {
+    def props = new Properties()
+    File propsFile = new File('build.properties')
+    props.load(propsFile.newDataInputStream())
+    props.setProperty('build_number',(Integer.parseInt(props.getProperty('build_number'))+1).toString())
+    props.store(propsFile.newWriter(), null)
+}
+
+build.dependsOn incrementVersionCode
